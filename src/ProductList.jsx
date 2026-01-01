@@ -301,34 +301,29 @@ function ProductList() {
                 {!showCart &&
                   plantsArray.map((category, categoryIndex) => (
                     <div key={categoryIndex} className="category-section">
-                      {/* Category Heading */}
+                      
                       <h2 className="category-title">{category.category}</h2>
-              
-                      {/* Plants List */}
+            
                       <div className="product-list">
                         {category.plants.map((plant, plantIndex) => (
                           <div className="product-card" key={plantIndex}>
-                            {/* Plant Image */}
+                        
                             <img
                               className="product-image"
                               src={plant.image}
                               alt={plant.name}
                             />
               
-                            {/* Plant Name */}
                             <div className="product-title">{plant.name}</div>
               
-                            {/* Plant Description */}
                             {plant.description && (
                               <div className="product-description">{plant.description}</div>
                             )}
               
-                            {/* Plant Cost */}
                             {plant.cost && (
                               <div className="product-cost">{plant.cost}</div>
                             )}
               
-                            {/* Add to Cart Button */}
                             <button
                               className={
                                 addedToCart[plant.name]
@@ -346,12 +341,9 @@ function ProductList() {
                     </div>
                   ))}
               </div>
-              
-
-            </div>
-    ) : (
-        <CartItem onContinueShopping={handleContinueShopping} />
-    )}
+          ) : (
+             <CartItem onContinueShopping={handleContinueShopping} />
+            )}
         </div>
     );
 }
